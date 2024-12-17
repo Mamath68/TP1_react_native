@@ -1,21 +1,27 @@
-import { StatusBar } from 'expo-status-bar';
 import React from 'react';
-import { StyleSheet, Text, View } from 'react-native';
+import './gesture-handler';
+import {createNativeStackNavigator} from '@react-navigation/native-stack';
+import {NavigationContainer} from "@react-navigation/native";
+import Home from "./pages/Home";
+import Register from "./pages/Register";
+import ConnectedHome from "./pages/ConnectedHome";
+import {Provider} from "react-redux";
+import Store from './store/configStore'
+import Login from "./pages/Login";
+
+const Stack = createNativeStackNavigator();
 
 export default function App() {
-  return (
-    <View style={styles.container}>
-      <Text>Open up App.js to start working on your app!</Text>
-      <StatusBar style="auto" />
-    </View>
-  );
+    return (
+        <Provider store={Store}>
+            <NavigationContainer>
+                <Stack.Navigator id="main" initialRouteName="Home">
+                    <Stack.Screen name="Home" component={Home} options={{title: "Accueil"}}/>
+                    <Stack.Screen name="Connect" component={Login} options={{ title: "Se Connecter"}}/>
+                    <Stack.Screen name="Register" component={Register} options={{ title: "S'inscrire"}}/>
+                    <Stack.Screen name="ConnectedHome" component={ConnectedHome} options={{ title: "Accueil"}}/>
+                </Stack.Navigator>
+            </NavigationContainer>
+        </Provider>
+    );
 }
-
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
-});

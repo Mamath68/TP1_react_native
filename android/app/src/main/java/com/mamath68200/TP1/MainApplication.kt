@@ -1,4 +1,4 @@
-package com.tp1
+package com.mamath68200.TP1
 
 import android.app.Application
 import android.content.res.Configuration
