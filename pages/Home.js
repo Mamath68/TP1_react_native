@@ -10,7 +10,7 @@ export default class Home extends Component {
     }
 
     render() {
-        const {navigation} = this.props;
+        const {navigate} = this.props.navigation;
         return (
             <View
                 style={{flex: 1, justifyContent: 'center', alignItems: 'center'}}>
@@ -20,7 +20,7 @@ export default class Home extends Component {
                 />
 
                 <Bouton title="CONNEXION"
-                        onPress={() => navigation.navigate('Connect')}
+                        onPress={() => navigate('Loginscreen')}
                         style={{backgroundColor: 'purple'}}
                         textStyle={{fontSize: 20}}
                 />
@@ -33,7 +33,7 @@ export default class Home extends Component {
                             marginTop: 15,
                             marginBottom: 15
                         }}
-                        onPress={() => navigation.navigate('Register')}
+                        onPress={() => navigate('Registerscreen')}
                         textStyle={{fontSize: 20, color: 'purple'}}/>
             </View>
         );

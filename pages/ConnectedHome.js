@@ -7,8 +7,8 @@ import SubTitle from "../components/SubTitle";
 export default class ConnectedHome extends Component {
 
     render() {
-        const user = this.props.route.params.username
-        const {navigation} = this.props;
+        const { navigation, route } = this.props;
+        const user = route.params.username
 
         return (
             <View style={{flex: 1, justifyContent: 'center', alignItems: 'center'}}>

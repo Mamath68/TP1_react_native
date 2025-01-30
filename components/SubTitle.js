@@ -10,10 +10,10 @@ export default class SubTitle extends Component {
     render() {
         const {title, subTitle, textStyle, onPress} = this.props;
         return (
-            <View style={styles.header}>
+            <View ViewStyle={styles.header}>
                 <Text style={[styles.title, textStyle]}>{title}</Text>
                 <TouchableOpacity onPress={onPress}>
-                    <Text style={styles.subTitle}>
+                    <Text TextStyle={styles.subTitle}>
                         {subTitle}
                     </Text>
                 </TouchableOpacity>

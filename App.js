@@ -8,6 +8,7 @@ import ConnectedHome from "./pages/ConnectedHome";
 import {Provider} from "react-redux";
 import Store from './store/configStore'
 import Login from "./pages/Login";
+import ForgotPassword from "./pages/ForgotPassword";
 
 const Stack = createNativeStackNavigator();
 
@@ -15,13 +16,18 @@ export default function App() {
     return (
         <Provider store={Store}>
             <NavigationContainer>
-                <Stack.Navigator id="main" initialRouteName="Home">
-                    <Stack.Screen name="Home" component={Home} options={{title: "Accueil"}}/>
-                    <Stack.Screen name="Connect" component={Login} options={{ title: "Se Connecter"}}/>
-                    <Stack.Screen name="Register" component={Register} options={{ title: "S'inscrire"}}/>
-                    <Stack.Screen name="ConnectedHome" component={ConnectedHome} options={{ title: "Accueil"}}/>
+                <Stack.Navigator id="main" initialRouteName="Homescreen">
+                    <Stack.Screen
+                        name="Homescreen"
+                        component={Home}
+                    />
+                    <Stack.Screen name="Loginscreen" component={Login}/>
+                    <Stack.Screen name="Registerscreen" component={Register}/>
+                    <Stack.Screen name="ForgotPasswordscreen" component={ForgotPassword}/>
+                    <Stack.Screen name="Dashboard" component={ConnectedHome}/>
                 </Stack.Navigator>
             </NavigationContainer>
         </Provider>
-    );
+    )
+        ;
 }

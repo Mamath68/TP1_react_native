@@ -37,8 +37,6 @@ class Register extends Component {
         const emailError = emailValidator(this.state.email);
         const passwordError = validator(this.state.password);
 
-        let user = [];
-
         console.log(nameError)
         console.log(emailError)
         console.log(passwordError)
@@ -64,7 +62,7 @@ class Register extends Component {
     }
 
     render() {
-        const {navigation} = this.props;
+        const {navigate} = this.props.navigation;
         return (
             <View style={{flex: 1, justifyContent: 'center', alignItems: 'center'}}>
                 <Title title="Inscription" textStyle={{color: 'purple', marginBottom: 10}}/>
@@ -105,7 +103,7 @@ class Register extends Component {
                 <SubTitle
                     title="Déja Inscrit ?"
                     subTitle=" Connectez Vous"
-                    onPress={() => navigation.navigate('Connect')}
+                    onPress={() => navigate('Loginscreen')}
                     textStyle={{color: 'black'}}
                 />
 
